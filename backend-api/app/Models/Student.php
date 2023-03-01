@@ -10,4 +10,9 @@ class Student extends Model
     protected $primaryKey = 'student_id';
     protected $guarded = [];
     use HasFactory;
+
+    public function attendance()
+    {
+        return $this->hasMany(Attendance::class, 'student_id');
+    }
 }
