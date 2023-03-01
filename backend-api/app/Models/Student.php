@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $primaryKey = 'student_id';
+    protected $guarded = [];
     use HasFactory;
 }
