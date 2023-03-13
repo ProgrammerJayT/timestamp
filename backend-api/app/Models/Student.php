@@ -11,8 +11,18 @@ class Student extends Model
     protected $guarded = [];
     use HasFactory;
 
-    public function attendance()
+    public function account()
+    {
+        return $this->belongsTo(Account::class);
+    }
+
+    public function attendances()
     {
         return $this->hasMany(Attendance::class, 'student_id');
+    }
+
+    public function modules()
+    {
+        return $this->hasMany(Module::class, 'student_id');
     }
 }
